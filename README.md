@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+## Mangement System
+React와 Node.js를 이용한 고객 관리 시스템
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
