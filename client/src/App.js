@@ -5,6 +5,7 @@ import { TableRow, TableBody, TableCell, TableHead,Table } from '@mui/material';
 import { withStyles } from '@mui/styles';
 import { Paper } from '@mui/material';
 import { CircularProgress } from '@mui/material';
+import CustomerAdd from './components/CustomerAdd';
 
 const styles = theme => ({
   root: {
@@ -38,10 +39,24 @@ props or state => shouldComponentUpdate()
 
 class App extends Component{
 
-  state = {
-    customers: "",
-    completed: 0 // progress measure
+  constructor(props) {
+    super(props);
+    this.state = {
+      customer: '',
+      completed: 0
+    }
   }
+
+  stateRefresh = () => {
+    this.setState({
+      customers: '',
+      completed: 0
+    });
+    this.callApi()
+    .then(res => this.setState({customers: res}))
+    .catch(err => console.log(err));
+  }
+
   componentDidMount() {
     this.timer = setInterval(this.progress, 20); // 0.02초 마다 반복적으로 수행
     this.callApi()
@@ -63,6 +78,7 @@ class App extends Component{
   render() {
     const {classes} = this.props;
     return (
+      <div>
         <Paper className={classes.root}>
           <Table className={classes.table}>
             <TableHead>
@@ -87,6 +103,8 @@ class App extends Component{
             </TableBody>
           </Table>                
         </Paper>
+        <CustomerAdd stateRefresh={this.stateRefresh}/>
+      </div>
     );
   }
 }
