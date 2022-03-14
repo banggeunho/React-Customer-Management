@@ -7,6 +7,9 @@
         "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
     },
     "dependencies": {
+        "@material-ui/icons": "^4.11.2",
+        "@mui/material": "^5.5.0",
+        "@mui/styles": "^5.5.0",
         "body-parser": "^1.19.2",
         "cors": "^2.8.5",
         "express": "^4.17.3",
