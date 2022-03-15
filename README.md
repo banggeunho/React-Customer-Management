@@ -6,6 +6,15 @@ Language : React JS<br/>
 Server : AWS EC2(Ubuntu) + Node.js<br/>
 DB : AWS RDS + MySQL<br/>
 
+* I used LTS version to the whole library in project.
+
+## Key Library
+npm<br/>
+nodemon<br/>
+cors<br/>
+MySQL<br/>
+Material-UI(@mui-material)<br/>
+
 ## Results
 < Main Page >
 <img width="1436" alt="스크린샷 2022-03-15 15 01 09" src="https://user-images.githubusercontent.com/72342550/158317813-2a1b1d14-2ddc-45f4-9d98-c9b19c7c692e.png">
